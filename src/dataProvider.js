@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const APIAddress = 'https://arize-backend-development-ikrcogluxq-uc.a.run.app'
-const APIAddress = 'http://localhost:8080'
+const APIAddress = 'https://arize-backend-development-ikrcogluxq-uc.a.run.app'
+// const APIAddress = 'http://localhost:8080'
 
 const dataProvider = {
     getOne : async (resource, params) => {
