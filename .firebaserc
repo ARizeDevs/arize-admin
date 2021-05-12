@@ -5,12 +5,9 @@
    "targets": {
     "tripleearplatform": {
       "hosting": {
-        "production": [
-          "tripleearplatform"
+        "admin": [
+          "arize-admin"
         ],
-        "development": [
-          "arize-development"
-        ]
       }
     }
   }

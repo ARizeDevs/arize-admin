@@ -31,8 +31,10 @@ export const UserShow = (props) => (
             <Tab label="statistics">
                 <TextField source='totalARViews' label='AR views' />
                 <TextField source='totalTDViews' label='3D views' />
+                <FunctionField label='Total Views' render={record => record.totalARViews+record.totalTDViews} />
                 <TextField source='totalShares' label='shares' />
-                <FunctionField label='AR/3D/SH last 30 days' render={record => record.statistics?`${record.statistics.intervalARViews} / ${record.statistics.intervalTDViews} / ${record.statistics.intervalShares} ..............................`:''} />
+                <FunctionField label='AR/3D/Total last 30 days' render={record => record.statistics?`${record.statistics.intervalARViews} / ${record.statistics.intervalTDViews} / ${record.statistics.intervalTDViews + record.statistics.intervalARViews} ..............................`:''} />
+                <FunctionField label='shares last 30 days' render={record => record.statistics?`${record.statistics.intervalShares}`:''} />
             </Tab>
 
         </TabbedShowLayout>

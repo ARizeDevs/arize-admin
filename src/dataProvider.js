@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const APIAddress = 'https://arize-backend-development-ikrcogluxq-uc.a.run.app'
-// const APIAddress = 'http://localhost:8080'
+// const APIAddress = 'https://arize-backend-development-ikrcogluxq-uc.a.run.app'
+const APIAddress = 'http://localhost:8080'
 
 const dataProvider = {
     getOne : async (resource, params) => {
@@ -13,6 +13,8 @@ const dataProvider = {
     getList : async (resource, params) => {
         let url = `${APIAddress}/${resource}`
 
+        console.log(params);
+
         if(params.pagination) {
             const limit = params.pagination.perPage
             const offset = (params.pagination.page - 1) *params.pagination.perPage 
@@ -22,7 +24,7 @@ const dataProvider = {
         
         const res = await axios.get(url)
         
-        return {data:res.data.data, total : 100}
+        return {data:res.data.data, total : res.data.total?res.data.total:1000}
     },
     getManyReference : async (resource, params) => {
         let url = `${APIAddress}/${resource}?`

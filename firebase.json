@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "arize-admin",
+    "target": "admin",
     "public": "build",
     "ignore": [
       "firebase.json",
